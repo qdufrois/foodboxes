@@ -42,4 +42,7 @@ user: quentin
 password: Testpass1234
 
 Feel free to try it out!!
+<<<<<<< HEAD
 
+=======
+>>>>>>> c2a0900e83abc5a6293f14050ec799aa9778a9f6
