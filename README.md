@@ -33,7 +33,7 @@ python manage.py runserver
 
 ## The Application
 
-This application displays a prototype of a foodboxes management website. This was a training to use Django and a mysql database.You can checkout the different types of foodboxes, vote for your favorite one and add a comment on your experience.You have access to the informations of all the customers, including their subscriptions and related orders.
+This application displays a prototype of a foodboxes management website. This was a training to use Django and a mysql database, realised in December and begining of January, this year.You can checkout the different types of foodboxes, vote for your favorite one and add a comment on your experience.You have access to the informations of all the customers, including their subscriptions and related orders.
 
 You also have access to a custom administration:
 
