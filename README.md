@@ -6,7 +6,7 @@ Django 2.0 project - Quentin Dufrois
 
 ### Copy the unzipped folder in the desired directory
 
-### Get mock data with the quentin_delivery.sql file (no sensitive infos)
+### Get mock data with the foodboxes_db.sql file (no sensitive infos)
 
 ### Then start the virtualenv and launch the server
 In the terminal:
