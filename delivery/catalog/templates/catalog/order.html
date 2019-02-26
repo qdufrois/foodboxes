@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Orders</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'catalog/bootstrap.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'catalog/mycss.css' %}"/>
+
+    </head>
+
+    <body>
+
+        <div class='container'>
+            
+            <h1>List of orders</h1>
+            
+            <table class='table table-hover'>
+
+                <thead>
+
+                    <tr>
+                        <th>Date of ordering</th>
+                        <th>Price</th>                        
+                        <th>Name of the orderer</th>
+                        <th>Type of box</th>
+                        <th>Status of the subscription</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>                
+
+                    {% for order in orders %}
+
+                        <tr>
+                            <td>{{ order.order_date|date:'d/m/Y' }}</td>
+                            <td>{{ order.price }}</td>                        
+                            <td><a href="{% url "catalog:customers" order.subscription.customer.customer_id %}"><span class="badge badge-primary">
+                                {{ order.subscription.customer.first_name }} {{ order.subscription.customer.last_name }}</span></a></td>
+                            <td><a href="{% url "catalog:products" order.subscription.product.name %}"><span class="badge badge-success">{{ order.subscription.product.name }}</span></a></td>
+                            <td><a href="{% url "catalog:subscriptions" order.subscription.subscription_id %}">{% if order.subscription.status == "ACTIVE" %}<span class="badge badge-info">{% else %}
+                                <span class="badge badge-secondary">{% endif %}{{ order.subscription.status }}</span></a></td>
+                        </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </body>
+
+</html>

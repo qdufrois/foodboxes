@@ -1,0 +1,69 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Subscription</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'catalog/bootstrap.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'catalog/mycss.css' %}"/>
+
+    </head>
+
+    <body>
+
+        <div class='container'>
+        
+            <h1>Subscriptions</h1>
+
+            <table class='table table-hover'>
+
+                <thead>
+
+                    <tr>
+                        <th>Id</th>
+                        <th>Status</th>
+                        <th>Date of creation</th>
+                        <th>Related product</th>
+                        <th>Related customer</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    {% for sub in subscriptions %}
+
+                        {% if selected_id == sub.subscription_id %}
+
+                            <tr class="highlight">                       
+
+                        {% else %}
+
+                            <tr>
+                        
+                        {% endif %}                        
+                        
+                                <td>{{ sub.subscription_id  }}</td>
+                                <td>{% if sub.status == "ACTIVE" %}<span class="badge badge-info">{% else %}
+                                    <span class="badge badge-secondary">{% endif %}{{ sub.status }}</span></td>
+                                <td>{{ sub.created_at }}</td>
+                                <td><a href="{% url "catalog:products" sub.product.name %}"><span class="badge badge-primary">{{ sub.product.name }}</span></a></td>
+                                <td><a href="{% url "catalog:customers" sub.customer.customer_id %}">
+                                    <span class="badge badge-success">{{ sub.customer.first_name }} {{sub.customer.last_name}}</span></td>
+                            
+                            </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+            
+        </div>
+
+    </body>
+
+</html>

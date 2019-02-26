@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Home</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'catalog/bootstrap.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'catalog/mycss.css' %}"/>
+
+    </head>
+
+    <body>
+
+        </br>
+
+        <div class='container'>
+
+            {% if sent %}Your vote has been sent. Thank you!
+            <p><a href="{% url 'catalog:home' %}"><span class="badge badge-success"> Go back to the main menu</a></p>
+
+
+            {% else %}
+
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}    
+                <input type="submit" value="Submit" />
+            </form>
+
+            {% endif %}
+            
+        </div>
+    
+    </body>
+
+</html>

@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Customers</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'catalog/bootstrap.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'catalog/mycss.css' %}"/>
+
+
+    </head>
+
+    <body>
+
+        <div class='container'>
+        
+            <h1>Customer Page</h1>
+
+            <h2>Find your customers</h2>
+
+            <table class='table table-hover'>
+
+                <thead>
+                    <tr>
+                        <th>Last name</th>
+                        <th>First name</th>                    
+                        <th>email adress</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {% for customer in customers %}
+
+                    {% if selected_id == customer.customer_id %}
+
+                        <tr class="highlight">                       
+
+                    {% else %}
+
+                        <tr>
+                        
+                    {% endif %} 
+                    
+                            <td>{{ customer.last_name }}</td>
+                            <td>{{ customer.first_name }}</td>
+                            <td>{{ customer.email }}</td>
+
+                        </tr>                   
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </body>
+
+
+
+</html>

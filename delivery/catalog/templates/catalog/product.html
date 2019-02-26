@@ -1,0 +1,107 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Products</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'catalog/bootstrap.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'catalog/mycss.css' %}"/>
+
+    </head>
+
+    <body>
+
+        <div class='container'>
+        
+            <h1>Find the proposed products</h1>
+
+            <table class='table table-hover'>
+
+                <thead>
+
+                    <tr>
+                        <th>Name</th>
+                        <th>Number of meals</th>
+                        <th>Number of persons</th>
+                        <th>More infos on the product</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>                
+
+                    {% for prod in products %}
+
+                        {% if name_product == prod.name %}
+
+                            <tr class="highlight">                       
+
+                        {% else %}
+
+                            <tr>
+                        
+                        {% endif %} 
+
+                                <td>{{ prod.name }}</td>
+                                <td>{{ prod.nb_of_meals }}</td>
+                                <td>{{ prod.nb_of_persons }}</td>
+                                <td><a href="{% url 'catalog:product_detail' prod.name %}"> <span class="badge badge-success">
+                                    Full description of the {{ prod.name }} box</span></a></td>
+
+                            </tr>
+                       
+                    {% endfor %}
+
+                </tbody>
+
+            </table> 
+            
+            <div class="row">
+
+                <div class="col">                      
+
+                    <ul class="list-group">
+
+                        <li li class="list-group-item list-group-item-secondary">Your favorite box:</li>
+                        <li class="list-group-item list-group-item-info">{{ counter_classic }} person{{ counter_classic|pluralize }} voted for the classic box </li>
+                        <li class="list-group-item list-group-item-success">{{ counter_veggie }} person{{ counter_veggie|pluralize }} voted for the veggie box </li>
+                        <li class="list-group-item list-group-item-primary">{{ counter_family }} person{{ counter_family|pluralize }} voted for the family box </li>
+                    
+                    </ul>
+
+                    </br>
+
+                    <a href = "{% url 'catalog:prefered_box' %}"><span class="badge badge-primary">You want to vote for your favorite box? Click here!</spans></a>
+
+                </div>
+
+                <div class='col'>
+
+                    <ul class='list-group list-group-flush'>
+
+                        <li class = 'list-group-item'><strong>Latest comments about the vote:</strong></li>
+
+                    {% for vote in votes %}
+
+                        <li class = 'list-group-item'>{{ vote.comment }} ---> added the {{ vote.form_date|date:'d/m/Y' }} at {{ vote.form_date|time:'H:i' }} by {{ vote.name }}</li>                                      
+                                                            
+                    {% empty %}
+
+                        <li class = 'list-group-item'>No comment yet...</li>
+
+                    {% endfor %}
+
+                    </ul>                      
+                                                        
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+
+</html>

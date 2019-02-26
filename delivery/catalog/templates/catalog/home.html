@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Home</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'catalog/bootstrap.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'catalog/mycss.css' %}"/>
+
+    </head>
+
+    <body>
+
+        <div class='container'>
+
+            <h1>Welcome on the foodboxe website</h1> 
+
+            <div class='container-2'>           
+
+                <h3>On which topic do you want more infos?</h3>
+
+                <div class='row'>  
+                
+                    <div class='col col-home'><a href="{% url "catalog:orders" %}">All orders</a></div>
+                    <div class='col col-home'><a href="{% url "catalog:subscriptions" %}">Subscriptions</a></div>
+
+                </div>
+
+                <div class='row'>
+
+                    <div class='col col-home'><a href="{% url "catalog:customers" %}">Customers</a></div>
+                    <div class='col col-home'><a href="{% url "catalog:products" %}">Types of foodboxes</a></div>
+
+                </div>
+
+            </div>
+                
+        </div>
+
+    </body>
+
+</html>
