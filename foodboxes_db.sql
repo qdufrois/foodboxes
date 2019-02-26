@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.24, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.25, for Linux (x86_64)
 --
--- Host: localhost    Database: delivery
+-- Host: 127.0.0.1    Database: delivery
 -- ------------------------------------------------------
--- Server version	5.7.24-0ubuntu0.18.04.1
+-- Server version	5.7.25-0ubuntu0.18.04.2
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -125,7 +125,7 @@ CREATE TABLE `auth_user` (
 
 LOCK TABLES `auth_user` WRITE;
 /*!40000 ALTER TABLE `auth_user` DISABLE KEYS */;
-INSERT INTO `auth_user` VALUES (1,'pbkdf2_sha256$120000$zhsO05iGF6jU$eSG3YEN0PD5XhUDJy/ZLcrhijxliypC3AE9HSiS+57g=','2019-01-10 16:06:06.902680',1,'quentin','','','quentin.dufrois@gmail.com',1,1,'2019-01-10 16:05:37.176354'),(2,'pbkdf2_sha256$120000$FAQDSAiGUvDt$Z3l6T43ceLE8cWrX5DDV4G5kko10GuROPD70StERyzQ=','2019-01-18 14:37:06.672651',1,'Hugo','','','',1,1,'2019-01-18 14:36:16.000000');
+INSERT INTO `auth_user` VALUES (1,'pbkdf2_sha256$120000$F7vLNO4d7Yf7$jUygjWI1UTA6dTtxhLkQFBTYUgmW8nob5O83hQIy8Rc=','2019-02-26 11:01:21.316032',1,'quentin','','','quentin.dufrois@gmail.com',1,1,'2019-01-10 16:05:37.176354'),(2,'pbkdf2_sha256$120000$FAQDSAiGUvDt$Z3l6T43ceLE8cWrX5DDV4G5kko10GuROPD70StERyzQ=','2019-01-18 14:37:06.672651',1,'Hugo','','','',1,1,'2019-01-18 14:36:16.000000');
 /*!40000 ALTER TABLE `auth_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -204,7 +204,7 @@ CREATE TABLE `counter_prefered` (
   PRIMARY KEY (`id`),
   KEY `counter_prefered_product_id_0e2200fd_fk_product_product_id` (`product_id`),
   CONSTRAINT `counter_prefered_product_id_0e2200fd_fk_product_product_id` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -264,7 +264,7 @@ CREATE TABLE `django_admin_log` (
   KEY `django_admin_log_user_id_c564eba6_fk_auth_user_id` (`user_id`),
   CONSTRAINT `django_admin_log_content_type_id_c4bce8eb_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`),
   CONSTRAINT `django_admin_log_user_id_c564eba6_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -273,7 +273,7 @@ CREATE TABLE `django_admin_log` (
 
 LOCK TABLES `django_admin_log` WRITE;
 /*!40000 ALTER TABLE `django_admin_log` DISABLE KEYS */;
-INSERT INTO `django_admin_log` VALUES (1,'2019-01-15 14:46:17.773562','1','classic',2,'[{\"changed\": {\"fields\": [\"description\"]}}]',8,1),(2,'2019-01-15 15:34:49.679624','31','Vote of ',3,'',11,1),(3,'2019-01-15 15:35:40.988594','32','Vote of Henry',3,'',11,1),(4,'2019-01-15 15:49:24.445888','2','Dufrois Quentin',2,'[{\"changed\": {\"fields\": [\"password\"]}}]',9,1),(5,'2019-01-15 15:59:38.579507','9','Ramsay Gordon',1,'[{\"added\": {}}]',9,1),(6,'2019-01-16 14:54:53.118784','1','Vote of qsfjqsdf',3,'',11,1),(7,'2019-01-16 14:57:25.898601','3','Vote of sdgdfgfdgfdgdfgdfg',3,'',11,1),(8,'2019-01-16 14:57:25.962702','2','Vote of dfgfdgd',3,'',11,1),(9,'2019-01-18 14:35:21.186817','10','Vote of Marion',3,'',11,1),(10,'2019-01-18 14:35:21.253286','9','Vote of dsf',3,'',11,1),(11,'2019-01-18 14:35:21.408808','8','Vote of dsff',3,'',11,1),(12,'2019-01-18 14:35:21.543547','7','Vote of sdfsdf',3,'',11,1),(13,'2019-01-18 14:35:21.577132','6','Vote of FDSFSD',3,'',11,1),(14,'2019-01-18 14:35:21.610916','5','Vote of DSFSD',3,'',11,1),(15,'2019-01-18 14:35:21.644442','4','Vote of sdgdsf',3,'',11,1),(16,'2019-01-18 14:36:16.095215','2','Hugo',1,'[{\"added\": {}}]',4,1),(17,'2019-01-18 14:36:43.701919','2','Hugo',2,'[{\"changed\": {\"fields\": [\"is_staff\", \"is_superuser\"]}}]',4,1),(18,'2019-01-18 14:38:06.211361','11','Vote of qsfsd',3,'',11,2);
+INSERT INTO `django_admin_log` VALUES (1,'2019-01-15 14:46:17.773562','1','classic',2,'[{\"changed\": {\"fields\": [\"description\"]}}]',8,1),(2,'2019-01-15 15:34:49.679624','31','Vote of ',3,'',11,1),(3,'2019-01-15 15:35:40.988594','32','Vote of Henry',3,'',11,1),(4,'2019-01-15 15:49:24.445888','2','Dufrois Quentin',2,'[{\"changed\": {\"fields\": [\"password\"]}}]',9,1),(5,'2019-01-15 15:59:38.579507','9','Ramsay Gordon',1,'[{\"added\": {}}]',9,1),(6,'2019-01-16 14:54:53.118784','1','Vote of qsfjqsdf',3,'',11,1),(7,'2019-01-16 14:57:25.898601','3','Vote of sdgdfgfdgfdgdfgdfg',3,'',11,1),(8,'2019-01-16 14:57:25.962702','2','Vote of dfgfdgd',3,'',11,1),(9,'2019-01-18 14:35:21.186817','10','Vote of Marion',3,'',11,1),(10,'2019-01-18 14:35:21.253286','9','Vote of dsf',3,'',11,1),(11,'2019-01-18 14:35:21.408808','8','Vote of dsff',3,'',11,1),(12,'2019-01-18 14:35:21.543547','7','Vote of sdfsdf',3,'',11,1),(13,'2019-01-18 14:35:21.577132','6','Vote of FDSFSD',3,'',11,1),(14,'2019-01-18 14:35:21.610916','5','Vote of DSFSD',3,'',11,1),(15,'2019-01-18 14:35:21.644442','4','Vote of sdgdsf',3,'',11,1),(16,'2019-01-18 14:36:16.095215','2','Hugo',1,'[{\"added\": {}}]',4,1),(17,'2019-01-18 14:36:43.701919','2','Hugo',2,'[{\"changed\": {\"fields\": [\"is_staff\", \"is_superuser\"]}}]',4,1),(18,'2019-01-18 14:38:06.211361','11','Vote of qsfsd',3,'',11,2),(19,'2019-02-26 10:46:53.771829','2','Vote of sdgsfdgdf',3,'',11,1),(20,'2019-02-26 10:46:53.936876','1','Vote of xxwvcv',3,'',11,1),(21,'2019-02-26 11:01:08.523392','1','quentin',2,'[{\"changed\": {\"fields\": [\"password\"]}}]',4,1);
 /*!40000 ALTER TABLE `django_admin_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -351,7 +351,7 @@ CREATE TABLE `django_session` (
 
 LOCK TABLES `django_session` WRITE;
 /*!40000 ALTER TABLE `django_session` DISABLE KEYS */;
-INSERT INTO `django_session` VALUES ('402x1o27bwh57t6pvtizcgygfoa881kt','ODMwMDY1OTgzMGUyNmE4Yjg1N2Q4NmM0OTYzN2I3ZWE2YTJiNjliNTp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJiNjA5OTk4YWM2YWU3Mzc3NTI0OTM3NDMwNTlmYWNjNzc3MmExZTAyIn0=','2019-02-01 14:37:06.774128');
+INSERT INTO `django_session` VALUES ('402x1o27bwh57t6pvtizcgygfoa881kt','ODMwMDY1OTgzMGUyNmE4Yjg1N2Q4NmM0OTYzN2I3ZWE2YTJiNjliNTp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJiNjA5OTk4YWM2YWU3Mzc3NTI0OTM3NDMwNTlmYWNjNzc3MmExZTAyIn0=','2019-02-01 14:37:06.774128'),('khfk2e59rrsz0334l482m2dgtdioz4ss','ZWZkM2M0MTU5Y2RmYWZlMTkwZGI5ZWFmMjI1NTY0ZjZmODVkZWY1NTp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIzMzljZTcxNzQ0NjUzM2RkMmUzZmVlNjA3MzBkYjgwMDM4MTJhZmI1In0=','2019-02-07 10:24:29.141649'),('ohpowbsfk0z5tlhqb5takihq4gr5rd9n','NTM1MTg5MDNhMTMwNDg2NDE0YjY3YzVhNDMzMTcyMTdhNmIwNDVkNDp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJmMmU1YjYyMmE5NzFkNWZlYTFhNTZiZDY0MDM1NzUwM2Y0ZmI4YTBhIn0=','2019-03-12 11:01:21.350051');
 /*!40000 ALTER TABLE `django_session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -450,4 +450,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-18 15:40:42
+-- Dump completed on 2019-02-26 12:04:41
