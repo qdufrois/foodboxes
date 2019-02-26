@@ -39,6 +39,6 @@ You also have access to a custom administration:
 
 user: quentin
 
-password: agagou
+password: Testpass1234
 
 Feel free to try it out!!
