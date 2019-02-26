@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 
 class Product(models.Model):
 
@@ -31,6 +30,7 @@ class Customer(models.Model):
     def __str__(self):
         return self.last_name + " " +self.first_name    
 
+
 class Subscription(models.Model):
 
     subscription_id = models.AutoField(primary_key=True)
@@ -45,6 +45,7 @@ class Subscription(models.Model):
 
     def __str__(self):
         return str(self.subscription_id)
+
     
 class Order(models.Model):
 
@@ -59,6 +60,7 @@ class Order(models.Model):
 
     def __str__(self):
         return str(self.order_date)
+        
 
 class CounterPrefered(models.Model):
 
